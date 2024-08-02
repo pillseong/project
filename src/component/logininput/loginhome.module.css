@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 7%;
+    justify-content: space-between;
+}
+
+.loginhomemainbox {
+    margin-top: 20vh;
+}
+
+.loginmaintext {
+    color: #3B6FF9;
+    font-size: 7vw;
+    font-weight: 900;
+    margin-bottom: 2vh;
+}
+
+.loginextext {
+    color: #000000;
+    font-size: 3.5vw;
+    margin-bottom: 0.5vh;
+}
+
+.inputbuttonbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
+    width: 100%;
+}
+
+.logininput,
+.mkidinput {
+    width: 86%;
+    background-color: #6285E1;
+    color: white;
+    border: none;
+    border-radius: 12vw;
+    padding: 4vw 0;
+    font-size: 4.5vw;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 2vh;
+}
+
+.logininput {
+    background-color: #6285E1;
+    color: white;
+}
+
+.mkidinput {
+    background-color: white;
+    color: #6285E1;
+    border: 1px solid #6285E1;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .loginhomemainbox {
+        margin-top: 20vh;
+    }
+    
+    .loginmaintext {
+        font-size: 3.5rem;
+    }
+    
+    .loginextext {
+        font-size: 1.2rem;
+    }
+    
+    .logininput,
+    .mkidinput {
+        width: 80%;
+        max-width: 400px;
+        border-radius: 50px;
+        padding: 15px 0;
+        font-size: 1.2rem;
+    }
+}

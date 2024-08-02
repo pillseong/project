@@ -1,0 +1,19 @@
+.chat-interface {
+  max-width: 100%;  /* 변경 */
+  height: 100%;     /* 추가 */
+  display: flex;    /* 추가 */
+  flex-direction: column; /* 추가 */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.message-list {
+  flex-grow: 1;     /* 추가 */
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* 나머지 스타일은 그대로 유지 */

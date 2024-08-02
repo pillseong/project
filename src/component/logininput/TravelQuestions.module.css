@@ -1,0 +1,187 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10%;
+    width: 100%;
+    position: relative;
+  }
+  
+  .back_btn {
+    width: 25px;
+    height: 30px;
+    margin-left: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    text-align: center;
+    flex: 1;
+    margin-right: 30px;
+  }
+  
+  .progressBar {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    height: 10px;
+    margin-bottom: 15%;
+  }
+  
+  .progressFill {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+  }
+  
+  .questionContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .questionText {
+    font-size: 44px;
+    text-align: left;
+    word-break: keep-all;
+    line-height: 1.4;
+  }
+  
+  .sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 35%;
+  }
+  
+  .sliderWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .bubbleContainer {
+    position: absolute;
+    top: -50px;  /* 위치를 더 위로 조정 */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bubble {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;  /* 패딩 증가 */
+    border-radius: 20px;  /* 더 둥근 모서리 */
+    font-size: 18px;  /* 글자 크기 증가 */
+    position: relative;
+    white-space: nowrap;  /* 텍스트가 한 줄로 유지되도록 */
+  }
+  
+  .bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;  /* 화살표 위치 조정 */
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;  /* 화살표 크기 증가 */
+    border-right: 10px solid transparent;
+    border-top: 10px solid #007bff;
+    transform: translateX(-50%);
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 30px 10px 0;  /* 위쪽 마진 증가 */
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 2px solid #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .answerLabelsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .answerLabel {
+    font-size: 20px;
+    color: #007bff;
+  }
+  
+  .navigationButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .navButton {
+    border: none;
+    border-radius: 35px;
+    width: 45%;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+  .navButton:disabled {
+    background-color: #cccccc;
+  }
+  
+  .navButtonPrev {
+    color: #6285E1;
+    background-color: white;
+    border: 2px solid #6285E1;
+  }
+  
+  .navButtonPrev:disabled {
+    color: #A0B4E0; 
+    background-color: white;
+    border: 2px solid #A0B4E0;
+  }
+
+  .input {
+    width: 60vw;
+    font-size: 4vw;
+    margin-bottom: 22vh;
+    border-radius: 30px;
+    padding: 20px;
+  }

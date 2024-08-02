@@ -1,0 +1,113 @@
+.creleftbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 28vw;
+    height: 7vh;
+    color: white;
+    border: 2px solid #6285E1;
+    background-color: white;
+    margin-top: 99%;
+    margin-left: 15.4%;
+    border-radius: 5vw;
+}
+
+.crerightbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 28vw;
+    height: 7vh;
+    color: white;
+    border: 2px solid #6285E1;
+    background-color: #6285E1;
+    margin-top: 99%;
+    margin-left: 53%;
+    border-radius: 5vw;
+}
+
+.crebuttontext1 {
+    color: #6285E1;
+    font-size: 4.6vw;
+    
+    margin-left: 10%;
+}
+
+.crebuttontext2 {
+    color: white;
+    font-size: 4.6vw;
+   
+    margin-left: -10%;
+}
+
+.cresold1 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-left: 4px solid #6285E1;
+    border-bottom: 4px solid #6285E1;
+    transform: rotate(45deg);
+    cursor: pointer;
+    margin: 10px;
+    margin-left: -9vw;
+    margin-top: 1vh;
+}
+
+.cresold2 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-left: 4px solid white;
+    border-bottom: 4px solid white;
+    transform: rotate(-135deg);
+    cursor: pointer;
+    margin: 10px;
+    margin-left: 12vw;
+    margin-top: 1vh;
+}
+
+/* 반응형 스타일 추가 */
+@media (min-width: 721px) {
+   
+    .crefootercontainer{
+        height: 110vh;
+    }
+    .creleftbutton, .crerightbutton {
+        width: 16vw;
+        height: 7vh;
+       
+        font-size: 1.5vw;
+        margin-top: 64%;
+        margin-left: 30vw;
+        border-radius: 2.5vw;
+    }
+
+    .crerightbutton {
+
+        margin-left: 50vw;
+    }
+
+    .crebuttontext1, .crebuttontext2 {
+        margin-top: 2%;
+        font-size: 2.3vw;
+        margin-left: 5%;
+    }
+
+    .cresold1, .cresold2 {
+        width: 12px;
+        height: 12px;
+        border-left: 3px solid #6285E1;
+        border-bottom: 3px solid #6285E1;
+        margin-left: -4.5vw;
+        margin-top: 0.5vh;
+    }
+
+    .cresold2 {
+        border-left: 3px solid white;
+        border-bottom: 3px solid white;
+        margin-top: 0.8vw;
+        margin-left: 7vw;
+    }
+}

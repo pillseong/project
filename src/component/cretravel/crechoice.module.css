@@ -1,0 +1,83 @@
+.choicebox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.choicetext1 {
+    font-weight: 300;
+    margin-left: 20vw;
+    font-size: 4vw;
+}
+
+.choicetext2 {
+    font-weight: 300;
+    margin-left: 20vw;
+    font-size: 4vw;
+    margin-top: -4vw;
+}
+
+.choicprtext {
+    margin-left: 20vw;
+    margin-top: -1vw;
+}
+
+.crefootercontainer {
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.creleftbutton {
+    width: 30vw;
+    height: 20vh;
+    border: 2px solid #6285E1;
+    color: #6285E1;
+}
+
+.crerightbutton {
+    width: 30vw;
+    height: 20vh;
+    color: white;
+    background-color: #6285E1;
+}
+
+.rcslidercontainer1 {
+    margin-bottom: 20vh !important;
+}
+
+/* 반응형 스타일 추가 */
+@media (min-width: 721px) {
+    .choicetext1, .choicetext2 {
+        font-size: 3vw;
+        margin-left: 20vw;
+    }
+
+    .choicprtext {
+        font-size: 1vw;
+    }
+
+    .choicetext2 {
+        margin-top: -2vw;
+    }
+
+    .choicprtext {
+        margin-top: -0.5vw;
+    }
+
+    .chicecontainer {
+        margin-top: 3vh; /* PC 화면에서 컨테이너 위치 조정 */
+        width: 55vw;
+        height: 70vh;
+        border-radius: 4vw;
+        margin-left: 20vw;
+    }
+
+    .creleftbutton, .crerightbutton {
+        width: 15vw;
+        height: 10vh;
+        font-size: 1.5vw;
+    }
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "AppleSDFothicNewH";
+    font-weight: normal;
+    src: url("./component/font/AppleSDGothicNeoH.ttf") format("truetype");
+  }
+  
+  body {
+    font-family: "AppleSDFothicNewH";
+  }

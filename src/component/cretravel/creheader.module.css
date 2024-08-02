@@ -1,0 +1,136 @@
+.Creheadercontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.creheadertext {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.checklist {
+    display: flex;
+    align-items: center;
+    gap: 1px; 
+}
+
+.checkcircle {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #4caf50;
+    border-radius: 50%;
+    position: relative;
+}
+
+.checkcircle1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #6285E1; 
+    border-radius: 50%; 
+    border: 2px solid #6285E1; 
+}
+.checkcircle2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #E5E5E5; 
+    border-radius: 50%; 
+    border: 2px solid #E5E5E5;
+}
+.checkcircle3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color:  #E5E5E5; 
+    border-radius: 50%;
+    border: 2px solid #E5E5E5;
+}
+
+.checkmark {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    width: 19px;
+    height: 13px;
+    border-left: 7px solid white; 
+    border-bottom: 7px solid white; 
+    border-top-right-radius: 5px; 
+    border-bottom-left-radius: 5px; 
+    transform: translate(-50%, -50%) rotate(-45deg); 
+}
+
+.line1 {
+    position: relative;
+    width: 100px;
+    height: 5px;
+    background-color:  #E5E5E5; 
+}
+.line2 {
+    position: relative;
+    width: 100px;
+    height: 5px;
+    background-color:  #E5E5E5; 
+}
+.Crebackbuttons {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-left: 5px solid #A3A3A3;
+    border-bottom: 5px solid #A3A3A3;
+    transform: rotate(45deg);
+    cursor: pointer;
+    margin-left: -55vh;
+    margin-top: 4vh;
+}
+
+/* 반응형 스타일 추가 */
+@media (min-width: 721px) {
+    .Creheadercontainer {
+        padding: 4vh 0;
+    }
+
+    .creheadertext {
+        font-size: 3vw;
+        margin-bottom: 2vh;
+    }
+
+    .checkcircle1, .checkcircle2, .checkcircle3 {
+        width: 4vw;
+        height: 4vw;
+        
+    }
+
+    .checkmark {
+        width: 1.9vw;
+        height: 1.3vw;
+        border-left: 0.7vw solid white; 
+        border-bottom: 0.7vw solid white; 
+    }
+
+    .line1, .line2 {
+        width: 10vw;
+        height: 0.5vw;
+    }
+
+    .Crebackbuttons {
+        width: 2vw;
+        height: 2vw;
+        border-left: 0.5vw solid #A3A3A3;
+        border-bottom: 0.5vw solid #A3A3A3;
+        top: 4vh;
+        left: 5vw;
+    }
+}

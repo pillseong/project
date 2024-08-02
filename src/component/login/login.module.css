@@ -1,0 +1,149 @@
+.container {
+  max-width: 90vw;
+  height: 100vh;
+  padding: 5vw;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.title {
+  width: 24vw;
+  font-size: 7vw;
+  font-weight: bold;
+  margin-bottom: 10vh;
+}
+
+.inputGroup {
+  margin-bottom: 2vh;
+}
+
+.label {
+  display: block;
+  font-size: 3.5vw;
+  margin-bottom: 1.5vh;
+  color: #666;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  border: 1px solid #D8DADC;
+  width: 100%;
+  height: 12vw;
+  border-radius: 3vw;
+  padding: 0 3vw;
+  font-size: 4vw;
+  margin-bottom: 4vw;
+  box-sizing: border-box;
+}
+
+.checkmark, .eyeIcon {
+  position: absolute;
+  right: 3vw;
+  top: 38%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkmark svg, .eyeIcon svg {
+  width: 6vw;
+  height: 6vw;
+}
+
+.forgotPassword {
+  display: block;
+  text-align: right;
+  color: #6285E1;
+  text-decoration: none;
+  margin-bottom: 5vh;
+  font-size: 3.5vw;
+}
+
+.loginButton {
+  width: 100%;
+  background-color: #6285E1;
+  color: white;
+  border: none;
+  border-radius: 6vw;
+  padding: 4vw 0;
+  font-size: 4.5vw;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2vw;
+}
+
+.signupLink {
+  text-align: center;
+  margin-top: auto;
+  font-size: 3.5vw;
+  padding-bottom: 5vh;
+}
+
+.signupLink a {
+  color: #6285E1;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 400px;
+    height: auto;
+    min-height: 100vh;
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .label {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .input {
+    height: 48px;
+    border-radius: 12px;
+    padding: 0 12px;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .checkmark svg, .eyeIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .checkmark, .eyeIcon {
+    right: 12px;
+  }
+
+  .forgotPassword {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .loginButton {
+    padding: 16px 0;
+    border-radius: 24px;
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  .signupLink {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+}

@@ -1,0 +1,141 @@
+.pordmainbox{
+    position: absolute;
+}
+.credatemaintext1{
+    font-weight: 400;
+    margin-left: 20vw;
+    font-size: 4vw;
+}
+.credatemaintext2{
+    
+    font-weight: 400;
+    margin-left: 20vw;
+    font-size: 4vw;
+    margin-top: -4vw;
+}
+.choicprtext{
+    margin-left: 20vw;
+    margin-top: -1vw;
+}
+.rcslider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-right: 20%;
+    
+}
+.rcslidercontainer1{
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 70vw;
+    height: 40vh;
+    margin-left: 20%;
+}
+.rcslideritem1{
+    border-radius: 4vw;
+    margin-left: 2%;
+    flex: 0 0 100%; 
+    width: 10vw !important;
+    height: 38vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border: 3px solid #2D5BD2;
+    
+    
+}
+.traveltext{
+    position: absolute;
+    font-size: 4vh;
+    font-weight: 540;
+    margin-top: -55%;
+    margin-left: -45%;
+
+}
+.traveldatetext{
+    position: absolute;
+    font-size: 2.4vh;
+    font-weight: 370;
+    margin-top: -34%;
+    margin-left: -60%;
+}
+.traveltimetext{
+    position: absolute;
+    font-size: 2vh;
+    font-weight: 500;
+    margin-top: -48%;
+    margin-left: 54%;
+}
+.traveltime1text{
+    position: absolute;
+    font-size: 1.8vh;
+    
+    margin-top: -38%;
+    margin-left: 49.8%;
+}
+.userinfobox{
+    margin-top: 50%;
+    border-bottom-left-radius: 4vw; 
+    border-bottom-right-radius: 4vw;
+    font-size: 2.5vw;
+    font-weight: 500;
+    width: 100%;
+    height: 50%;
+    background-color: #EAF0FF;
+   
+}
+.usercousbox{
+    margin-top: -3%;
+    margin-left: 30%;
+
+}
+.abox{
+    margin-left: 17%;
+    position: absolute;
+    margin-top: -57%;
+}
+.a1box{
+    margin-left: 17%;
+    position: absolute;
+    margin-top: -46%;
+}
+.a2box{
+    margin-left: 17%;
+    position: absolute;
+    margin-top: -36%;
+}
+.a3box{
+    margin-left: 17%;
+    position: absolute;
+    margin-top: -25%;
+}
+.a4box{
+    margin-left: 17%;
+    position: absolute;
+    margin-top: -15%;
+}
+
+
+.circle{
+    margin-left: 3%;
+    width: 2vh;     
+    height: 2vh; 
+    border-radius: 50%;
+    background-color: #2D5BD2;
+    margin-bottom: 1vh; 
+}
+.aline1,
+.aline2 {
+    margin-top: 20%;
+    margin-left: 48%;
+    width: 0.2vh; /* 줄의 너비 */
+    height: 0.4vh; /* 필요에 따라 조정 */
+    background-color: black;
+    margin-bottom: -1.5vh; /* 요소 간 간격 */
+}
+.aline1{
+    margin-top: -2%;
+}

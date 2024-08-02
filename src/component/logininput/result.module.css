@@ -1,0 +1,50 @@
+.main_container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 10vh;
+}
+
+.pre_container {
+    text-align: center;
+}
+
+.user_pre {
+    font-size: 7vw;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-weight: 300;
+}
+
+.personaImg {
+    width: 50vw;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.mbtiDescription {
+    font-size: 5vw;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.next_btn {
+    font-size: 5vw;
+    width: 80%;
+    height: 7vh;
+    border-radius: 50px;
+    color: white;
+    background-color: #6285E1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10vw;
+    margin-top: 10vh;
+}
+
+.next_btn:hover {
+    background-color: #4a69b1;
+}
+

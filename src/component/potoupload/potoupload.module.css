@@ -1,0 +1,245 @@
+.container {
+    width: 100%;
+    margin-top: 10%;
+    padding: 2vw 2vw;
+    box-sizing: border-box;
+}
+
+.tip {
+    margin-bottom: 4vh;
+    font-size: 4vw;
+    font-weight: bold;
+    color: #333;
+}
+
+.title1 {
+    width: 100vw;
+    margin-bottom: -4%;
+    font-size: 7vw;
+    line-height: 1.2;
+}
+
+.title2 {
+    font-weight: bold;
+    margin-bottom: 2%;
+    font-size: 7vw;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: calc(0.9rem + 0.5vw);
+    color: #666;
+    margin-bottom: 2vw;
+    line-height: 1.4;
+}
+
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 2vw), 1fr));
+    gap: 2vw;
+    margin-bottom: 4%;
+}
+
+.imageBox {
+    aspect-ratio: 1;
+    background-color: #f0f0f0;
+    border-radius: 2vmin;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.emptyCircle, .checkCircle {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: calc(1rem + 1vw);
+    height: calc(1rem + 1vw);
+    border-radius: 50%;
+}
+
+.emptyCircle {
+    border: 2px solid #ffffff;
+    background-color: white;
+}
+
+.checkCircle {
+    background-color: #4a90e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkMark {
+    width: 40%;
+    height: 25%;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    margin-top: -10%;
+}
+
+.fileInput {
+    display: none;
+}
+
+.selectButton {
+    display: block;
+    width: 60%;
+    height: 70% !important;
+    padding: calc(0.5rem + 1vh) calc(1rem + 1vw);
+    background-color: #6285E1;
+    color: white;
+    text-align: center;
+    border-radius: 10vw;
+    cursor: pointer;
+    font-size: 4.3vw;
+    margin-left: 18vw;
+    margin-top: 7vh;
+    margin-bottom: 5vh;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+}   
+
+.selectButton:hover {
+    background-color: #4a69b1;
+}
+
+.selectButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.warningMessage {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 3.5vw;
+}
+
+@media (min-width: 721px) {
+    .title1 {
+        margin-left: 17vw;
+        font-size: 3vw;
+    }
+    .title2{
+        margin-left: 17vw;
+        margin-top: 7vh;
+        font-size: 3vw;
+    }
+    .subtitle{
+        margin-left: 17vw;
+        color: #666;
+        font-size: 1.4vw;
+    }
+    .image{
+        width: 100%;
+        height: 100%;
+    }
+    .imageGrid{
+        margin-left: 25vw;
+        width: 40vw;
+    }
+    .selectButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20vw;
+        height: 8.7vh !important;
+        font-size: 2vw;
+        margin-left: 35vw;
+    }
+    .warningMessage {
+        font-size: 1.5vw;
+    }
+    .infoImg{
+        height: 2.5vw;
+        width: 3.5vw !important;    
+        margin-right: 25vw;
+        margin-top: 15vh !important;
+    }
+}
+
+.infoImg {
+    position: absolute;
+    width: 7vw;
+    right: 5vw;
+    top: 11.5vh;
+    cursor: pointer;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 5vw;
+    border-radius: 2vmin;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close_modal {
+    position: absolute;
+    top: 2vh;
+    right: 3vw;
+    width: 5vw;
+    height: 3.5vh;
+    cursor: pointer;
+}
+
+.modalContent h2 {
+    font-size: 3.5vw;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    color: #333;
+}
+
+.modalContent p {
+    font-size: 3vw;
+    color: #666;
+    margin-bottom: 2vh;
+}
+
+@media (min-width: 721px) {
+    .modalContent {
+        padding: 2vw;
+    }
+
+    .tip {
+        font-size: 2vw;
+        margin-bottom: 3vh;
+    }
+
+    .modalContent h2 {
+        font-size: 1.8vw;
+        margin-top: 2vh;
+    }
+
+    .modalContent p {
+        font-size: 1.2vw;
+        margin-bottom: 1.5vh;
+    }
+    .selectButton{
+        height: 10vh;
+    }
+}

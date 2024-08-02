@@ -1,0 +1,36 @@
+.main_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    height: 90px;
+    z-index: 9999; /* z-index를 더 높게 설정 */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* 상단에 그림자 추가 */
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+/* 글로벌 스타일 추가 */
+:global(body) {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+:global(#root) {
+    min-height: 100vh;
+    padding-bottom: 90px; /* Footer 높이만큼 패딩 추가 */
+    box-sizing: border-box;
+}

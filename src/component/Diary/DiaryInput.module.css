@@ -1,0 +1,45 @@
+.end_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7vh;
+}
+
+.inputField {
+    display: flex;
+    position: relative;
+    justify-content: end;
+    align-items: end;
+}
+
+
+.answerEnd {
+    background-color: #D9D9D9;
+    color: #868686;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-size: 3vw;
+    height: 4vh;
+    margin-bottom: 5vh;
+}
+   
+   /* 새로운 CSS 추가 */
+  .createDiaryButton {
+    bottom: 20%; 
+    right: 20px; 
+    padding: 10px 20px;
+    background-color: #6285E1;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 1000; /* 다른 요소 위에 보이도록 설정 */
+    width: 50vw;
+    height: 7vh;
+  }
+  

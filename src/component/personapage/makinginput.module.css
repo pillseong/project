@@ -1,0 +1,35 @@
+.mkinputbox{
+    border-radius: 20vw;
+    position: fixed; 
+    bottom: 10%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50vw;
+    height: 8vh;
+    background-color: #6285E1;
+    z-index: 1000; 
+    
+}
+.mktext1{
+    
+    color:white;
+    font-weight: 600;
+    font-size: 5vw;
+    margin-left: 8vh;
+    margin-top: 1.7vh;
+    
+}
+@media (min-width: 721px) {
+
+    .mkinputbox{
+        margin-bottom: 2vh;
+        width: 25vw;
+        height: 12vh;
+
+    }
+    .mktext1{
+        font-size: 3.2vw;
+        margin-left: 8vh;
+        margin-top: 2vh;
+    }
+}
