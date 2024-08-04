@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import styles from "./managemate.module.css";
 
 import backBtn from '../logininput/back.png';
@@ -11,7 +11,11 @@ import Footer from '../footer/footer';
 // 내 메이트 컴포넌트
 function MyMates() {
     const [myMates, setMyMates] = useState([]);
-    
+    const [roomId, setRoomId] = useState(null);
+    const [isSocketReady, setIsSocketReady] = useState(false);
+    const [status, setStatus] = useState('');
+    const [recipientId, setRecipientId] = useState('');
+
     useEffect(() => {
         const fetchMyMates = async () => {
             try {
@@ -19,6 +23,7 @@ function MyMates() {
                 const jwtRefreshToken = localStorage.getItem('jwtRefreshToken');
 
                 const config = {
+                    withCredentials: true,
                     headers: {
                         'Cookie': `jwtToken=${jwtToken}; jwtRefreshToken=${jwtRefreshToken}`
                     }
@@ -35,9 +40,51 @@ function MyMates() {
         fetchMyMates();
     }, []);
 
-    const ChatStart = () => {
-        //여기에 소켓 연결
-        console.log("Chat Start");
+    const itsme = localStorage.getItem("memberId")
+
+    const ChatStart = async (userId) => {
+        try {
+            const response = await axios.post('https://port-0-travelproject-umnqdut2blqqevwyb.sel4.cloudtype.app/chat/rooms/', {
+                travel_user_id: itsme,
+                users: [
+                    { travel_user_id: userId }
+                ]
+            });
+
+            const createdRoomId = response.data.id;
+            setRoomId(createdRoomId);
+            console.log('생성된 방 ID:', createdRoomId);
+
+            // 새로운 방이 생성된 후 웹소켓을 해당 방 ID에 맞게 재연결
+            const webSocketUrl = `wss://port-0-travelproject-umnqdut2blqqevwyb.sel4.cloudtype.app/ws/chat/${createdRoomId}/`;
+            const socket = new WebSocket(webSocketUrl);
+
+            socket.onopen = () => {
+                console.log('웹소켓 연결 완료');
+                setIsSocketReady(true);
+            };
+
+            socket.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                console.log('서버로부터 메시지 수신:', data);
+                // handleServerMessage(data);
+            };
+
+            socket.onerror = (error) => {
+                console.error('웹소켓 오류:', error);
+                setIsSocketReady(false);
+            };
+
+            socket.onclose = (event) => {
+                console.log('웹소켓 연결 종료.', event.code, event.reason);
+                setIsSocketReady(false);
+            };
+
+            console.log('Chat Start');
+        } catch (error) {
+            console.error('Error creating chat room:', error.response?.data || error.message);
+            setStatus('채팅방 생성 중 오류가 발생했습니다.');
+        }
     }
 
     return (
@@ -54,7 +101,11 @@ function MyMates() {
                             <p className={styles.userName}>{mate.friendTravelUserDto.name}</p>
                             <p>한국형 페르소나</p>
                         </div>
-                        <img src={message} className={styles.meesage} onClick={ChatStart}/>
+                        <img 
+                            src={message} 
+                            className={styles.meesage} 
+                            onClick={() => ChatStart(mate.friendTravelUserId)}
+                        />
                     </div>
                 ))
             ) : (
@@ -75,6 +126,7 @@ function ReceivedRequests() {
                 const jwtRefreshToken = localStorage.getItem('jwtRefreshToken');
 
                 const config = {
+                    withCredentials: true,
                     headers: {
                         'Cookie': `jwtToken=${jwtToken}; jwtRefreshToken=${jwtRefreshToken}`
                     }
@@ -97,6 +149,7 @@ function ReceivedRequests() {
             const jwtRefreshToken = localStorage.getItem('jwtRefreshToken');
 
             const config = {
+                withCredentials: true,
                 headers: {
                     'Cookie': `jwtToken=${jwtToken}; jwtRefreshToken=${jwtRefreshToken}`
                 }
@@ -119,6 +172,7 @@ function ReceivedRequests() {
             const jwtRefreshToken = localStorage.getItem('jwtRefreshToken');
 
             const config = {
+                withCredentials: true,
                 headers: {
                     'Cookie': `jwtToken=${jwtToken}; jwtRefreshToken=${jwtRefreshToken}`
                 }
@@ -172,6 +226,7 @@ function SentRequests() {
                 const jwtRefreshToken = localStorage.getItem('jwtRefreshToken');
 
                 const config = {
+                    withCredentials: true,
                     headers: {
                         'Cookie': `jwtToken=${jwtToken}; jwtRefreshToken=${jwtRefreshToken}`
                     }

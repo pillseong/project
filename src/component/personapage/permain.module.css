@@ -5,23 +5,50 @@
     align-items: center; 
     gap: 80px; 
     position: absolute;
-    width: 100vw;
+    width: 90vw;
     height: 50vh;
     background-color: #F5F5F5;
     border-radius: 10%;
-    margin-left: 0;
+    margin-left: 5vw;
     margin-top: 27vh;
+    margin-bottom: -10% !important;
+    position: absolute;
 }
+.imgtext{
+    width: 31.7vw;
+    height: 5.5vh;
+    background-color: black;
+    margin-top: -22.6vh;
+    margin-left: -30.2vw;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.imgtext2{
+    width: 31.7vw;
+    height: 5.5vh;
+    background-color: black;
+    margin-top: -5.3vh;
+    margin-left: 13.2vw;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 
+}
+.boxtext{
+    font-size: 4vw;
+    text-align: center;
+    font-weight: 500;
+}
 .perusercontainer {
     margin-top: -18vh;
-    background-color: #D9D9D9;
+   
     width: 32vw;
     height: 25vh;
     border-radius: 4vw;
 }
 
 .perimg1, .perimg2 {
+    width: 20%;
+    margin-top: 2vh;
     font-size: 20px;
     text-align: center;
 }
@@ -31,63 +58,71 @@
     position: absolute;
     font-weight: 600;
     margin-left: -37vw;
-    margin-top: 5.3vh;
+    margin-top: 5.3vh;  
 }
 
 .userinfocontainer1, .userinfocontainer2 {
     position: absolute;
 }
+.userinfocontainer1{
+    margin-left: -5%;
+
+}
 
 .userinfobox {
     position: absolute;
-    width: 20vw;
-    height: 3vh;
-    background-color: #D5D5D5;
+    width: 20vw !important;
+    height: 3vh !important;
+    background-color: #D9D9D9 ;
     border-radius: 10vw;
     margin-top: 5vh;
-    margin-left: -29vw;
+  
+    margin-left: -29vw !important;
 }
 
 .infobox1 {
-    position: absolute;
+
     margin-top: 1vh;
 }
 
 .infobox2 {
     position: absolute;
-    margin-top: 5vh;
+    margin-top: 8.3vh;
 }
 
 .infobox3 {
     position: absolute;
-    margin-top: 9vh;
+    margin-top: 12.5vh;
 }
 .infobox4 {
     position: absolute;
-    margin-top: 4vh;
+    margin-top: 4.1vh;
 }
 
 .userinfocontainer2 {
-    margin-left: 75vw;
+    margin-left: 82vw;
 }
-
+.userinfocontainer2 .userinfotext{
+    margin-left: -5vw;
+}
 .userinfotext1, .userinfotext2, .userinfotext3, .userinfotext4 {
     margin-left: -6vw;
 }
 
 .userstatedistrict {
-    width: 13vw;
+    width: 15vw;
     height: 9vh;
     position: absolute;
     background-color: #6285E1;
     border-radius: 100%;
-    margin-top: 24vh;
+    margin-top: 25vh;
 }
 
 .compat {
+    font-size: 3vw;
     color: white;
-    margin-left: 4.2vw;
-    margin-top: 2vh;
+    margin-left: 4.4vw;
+    margin-top: 2.4vh;
 }
 
 .percent {

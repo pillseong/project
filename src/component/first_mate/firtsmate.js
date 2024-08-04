@@ -23,10 +23,31 @@ import ISFP from '../Img/ISFP 리우데자네이루.png';
 import ISTJ from '../Img/ISTJ 도쿄.png';
 import ISTP from '../Img/ISTP 부다페스트.png';
 
+import ENFJ1 from"../Img2/ENFJ 시드니 (1).png"
+import ENFP1 from '../Img2/ENFP 바르셀로나 (1).png';
+import ENTJ1 from '../Img2/ENTJ 뉴욕 (1).png';
+import ENTP1 from '../Img2/ENTP 런던 (1).png';
+import ESFJ1 from '../Img2/ESFJ 라스베이거스 (1).png';
+import ESFP1 from '../Img2/ESFP 암스테르담 (1).png';
+import ESTJ1 from '../Img2/ESTJ 서울 (1).png';
+import ESTP1 from '../Img2/ESFP 암스테르담 (1).png';
+import INFJ1 from '../Img2/INFJ 센프란시스코 (1).png'
+import INFP1 from '../Img2/INFP 파리 (1).png';
+import INTJ1 from '../Img2/INTJ 싱가포르 (1).png';
+import INTP1 from '../Img2/INTP 베를린 (1).png';
+import ISFJ1 from '../Img2/ISFJ 교토 (1).png';
+import ISFP1 from '../Img2/ISFP 리우데자네이루 (1).png';
+import ISTJ1 from '../Img2/ISTJ 도쿄 (1).png';
+import ISTP1 from '../Img2/ISTP 부다페스트 (1).png';
+
 function Firstmatepage() {
     const mbtiImages = {
         ENFJ, ENFP, ENTJ, ENTP, ESFJ, ESFP, ESTJ, ESTP,
         INFJ, INFP, INTJ, INTP, ISFJ, ISFP, ISTJ, ISTP
+    };
+    const mbtiImages1 = {
+        ENFJ1, ENFP1, ENTJ1, ENTP1, ESFJ1, ESFP1, ESTJ1, ESTP1,
+        INFJ1, INFP1, INTJ1, INTP1, ISFJ1, ISFP1, ISTJ1, ISTP1
     };
 
     const mbtiToCityMap = {
@@ -62,6 +83,7 @@ function Firstmatepage() {
     const [list, setList] = useState([]);
     const [selectedMate, setSelectedMate] = useState(null);
     const [selfData, setSelfData] = useState(null);
+    const [selectedMateMBTI, setSelectedMateMBTI] = useState(null);
 
     useEffect(() => {
         const fetchMyMates = async () => {
@@ -70,6 +92,7 @@ function Firstmatepage() {
                 const jwtRefreshToken = localStorage.getItem('jwtRefreshToken');
 
                 const config = {
+                    withCredentials: true,
                     headers: {
                         'Cookie': `jwtToken=${jwtToken}; jwtRefreshToken=${jwtRefreshToken}`
                     }
@@ -139,6 +162,7 @@ function Firstmatepage() {
             const selected = personaData.list.find(mate => mate.travel_user_id === friendTravelUserId);
             if (selected) {
                 setSelectedMate(selected);
+                setSelectedMateMBTI(selected.tendency);
                 console.log(`Clicked mate's MBTI: ${selected.tendency}`);
             } else {
                 console.log('MBTI information not found for this mate.');
@@ -149,42 +173,81 @@ function Firstmatepage() {
     };
 
     const renderMBTIImage = (mbti) => {
+        const { background } = mbtiColors[mbti] || { background: '#fff' };
+    
         return (
-            <img 
-                src={mbtiImages[mbti]} 
-                alt={`${mbti} image`} 
-                className={permainstyle.perimg1}
-            />
+            <div 
+                style={{ backgroundColor: background, padding: '10px', borderRadius: '8px', display: 'inline-block' }}
+            >
+                <img 
+                    src={mbtiImages[mbti]} 
+                    alt={`${mbti} image`} 
+                    className={permainstyle.perimg1}
+                    style={{ display: 'block', width: '100%', borderRadius: '8px' }}
+                />
+            </div>
         );
     };
 
-    const renderCompatibility = (compatibility) => {
+    const renderCompatibility = (compatibility, selfData, selectedMate) => {
+        if (!selfData || !selectedMate) {
+            return null;
+        }
+
+        const selfMbtiColors = mbtiColors[selfData.tendency] || { textBackground: '#000' };
+        const mateMbtiColors = mbtiColors[selectedMate.tendency] || { textBackground: '#000' };
+
         return (
             <div className={permainstyle.userstatedistrict}>
                 <p className={permainstyle.compat}>궁합</p>
                 <p className={permainstyle.percent}>{compatibility}%</p>
+                
+                <div 
+                    className={permainstyle.imgtext} 
+                    style={{ backgroundColor: selfMbtiColors.textBackground }}
+                >
+                    <p style={{ color: '#fff', fontWeight: 'bold', margin: '0' }}>{selfData.name}</p>
+                    <p className={permainstyle.boxtext} style={{ color: '#fff', margin: '0' }}>{mbtiToCityMap[selfData.tendency]}</p>
+                </div>
+
+                <div 
+                    className={permainstyle.imgtext2} 
+                    style={{ backgroundColor: mateMbtiColors.textBackground }}
+                >
+                    <p style={{ color: '#fff', fontWeight: 'bold', margin: '0' }}>{selectedMate.name}</p>
+                    <p className={permainstyle.boxtext} style={{ color: '#fff', margin: '0' }}>{mbtiToCityMap[selectedMate.tendency]}</p>
+                </div>
             </div>
         );
     };
 
     const renderPersonalityBars = (data, side) => {
+        const mbtiColor = mbtiColors[data.tendency] || { textBackground: '#000' };
         return (
             <div className={permainstyle[`userinfocontainer${side}`]}>
                 <div className={permainstyle.infobox1}>
                     <p className={permainstyle.userinfotext}>모험</p>
-                    <div className={permainstyle.userinfobox} style={{width: `${data.ei}%`}}></div>
+                    <div className={permainstyle.userinfobox}>
+                        <div  style={{width: `${data.ei}%`, backgroundColor: mbtiColor.textBackground, height: '100%', borderRadius: '2vw' }}></div>
+                    </div>
                 </div>
                 <div className={permainstyle.infobox2}>
                     <p className={permainstyle.userinfotext}>경험</p>
-                    <div className={permainstyle.userinfobox} style={{width: `${data.sn}%`}}></div>
+                    <div className={permainstyle.userinfobox}>
+                        <div style={{width: `${data.sn}%`, backgroundColor: mbtiColor.textBackground, height: '100%', borderRadius: '2vw' }}></div>
+                    </div>
                 </div>
                 <div className={permainstyle.infobox3}>
                     <p className={permainstyle.userinfotext}>즉흥</p>
-                    <div className={permainstyle.userinfobox} style={{width: `${data.ft}%`}}></div>
+                    <div className={permainstyle.userinfobox}>
+                        <div style={{width: `${data.ft}%`, backgroundColor: mbtiColor.textBackground, height: '100%', borderRadius: '2vw' }}></div>
+                    </div>
                 </div>
                 <div className={permainstyle.infobox4}>
                     <p className={permainstyle.userinfotext}>사교</p>
-                    <div className={permainstyle.userinfobox} style={{width: `${data.pj}%`}}></div>
+                    <div className={permainstyle.userinfobox}>
+                        <div style={{width: `${data.pj}%`, backgroundColor: mbtiColor.textBackground, height: '100%', borderRadius: '2vw' }}></div>
+                    </div>
                 </div>
             </div>
         );
@@ -217,7 +280,14 @@ function Firstmatepage() {
                                             className={styles.header_container}
                                             onClick={() => handleMateClick(mate.friendTravelUserId)}
                                         >
-                                            <img />
+                                            {personaData && personaData.list && (
+                                                <img 
+                                                    src={mbtiImages1[personaData.list.find(p => p.travel_user_id === mate.friendTravelUserId)?.tendency
+                                                        + '1']}
+                                                    alt="Mate MBTI"
+                                                    className={styles.mateImage}
+                                                />
+                                            )}
                                             <p>{mate.friendTravelUserDto.name}</p>
                                         </div>
                                     </div>
@@ -227,7 +297,7 @@ function Firstmatepage() {
                         
                         <div className={styles.mateManageIconContainer} onClick={manageMate}>
                             <div className={styles.mateManageCircle}>
-                               <img className={styles.img} src={mate} alt="Mate icon" />
+                                <img src={mate} alt="Mate management icon" className={styles.img} />
                             </div>
                             <div className={styles.mateManageIcon}>
                                 메이트 관리
@@ -246,7 +316,7 @@ function Firstmatepage() {
                             </div>
                             {renderPersonalityBars(selfData, 1)}
                             {renderPersonalityBars(selectedMate, 2)}
-                            {renderCompatibility(selectedMate.compatibility)}
+                            {renderCompatibility(selectedMate.compatibility, selfData, selectedMate)}
                         </div>
                     ) : (
                         <div className={styles.content}>
